@@ -1,4 +1,3 @@
-
 import { Suspense } from 'react';
 import { unstable_noStore as noStore } from 'next/cache';
 import Link from 'next/link';
@@ -13,11 +12,7 @@ import vercel from 'public/images/home/vercel.jpg';
 import avatar from 'app/avatar.jpg';
 import ViewCounter from 'app/blog/view-counter';
 import { PreloadResources } from 'app/preload';
-import {
-  getLeeYouTubeSubs,
-  getVercelYouTubeSubs,
-  getViewsCount,
-} from 'app/db/queries';
+
 
 function Badge(props) {
   return (
@@ -92,9 +87,9 @@ async function Subs({ name }: { name: string }) {
   noStore();
   let subscribers;
   if (name === '@leerob') {
-    subscribers = await getLeeYouTubeSubs();
+    // subscribers = await getLeeYouTubeSubs();
   } else {
-    subscribers = await getVercelYouTubeSubs();
+    // subscribers = await getVercelYouTubeSubs();
   }
 
   return (
@@ -128,8 +123,7 @@ function BlogLink({ slug, name }) {
 }
 
 async function Views({ slug }: { slug: string }) {
-  let views = await getViewsCount();
-  return <ViewCounter allViews={views} slug={slug} />;
+  
 }
 
 export default function Page() {
