@@ -12,7 +12,21 @@ import vercel from 'public/images/home/vercel.jpg';
 import avatar from 'app/avatar.jpg';
 import ViewCounter from 'app/blog/view-counter';
 import { PreloadResources } from 'app/preload';
+import {
+  getLeeYouTubeSubs,
+  getVercelYouTubeSubs,
+  getViewsCount,
+} from 'app/db/queries';
 
+function Badge(props) {
+  return (
+    <a
+      {...props}
+      target="_blank"
+      className="inline-flex items-center rounded border border-neutral-200 bg-neutral-50 p-1 text-sm leading-4 text-neutral-900 no-underline dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
+    />
+  );
+}
 
 function ArrowIcon() {
   return (
