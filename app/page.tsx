@@ -14,16 +14,6 @@ import ViewCounter from 'app/blog/view-counter';
 import { PreloadResources } from 'app/preload';
 
 
-function Badge(props) {
-  return (
-    <a
-      {...props}
-      target="_blank"
-      className="inline-flex items-center rounded border border-neutral-200 bg-neutral-50 p-1 text-sm leading-4 text-neutral-900 no-underline dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
-    />
-  );
-}
-
 function ArrowIcon() {
   return (
     <svg
@@ -83,6 +73,21 @@ function ChannelLink({ img, link, name }) {
   );
 }
 
+async function Subs({ name }: { name: string }) {
+  noStore();
+  let subscribers;
+  if (name === '@leerob') {
+    subscribers = await getLeeYouTubeSubs();
+  } else {
+    subscribers = await getVercelYouTubeSubs();
+  }
+
+  return (
+    <p className="text-neutral-600 dark:text-neutral-400">
+      {subscribers} subscribers
+    </p>
+  );
+}
 
 function BlogLink({ slug, name }) {
   return (
@@ -108,7 +113,8 @@ function BlogLink({ slug, name }) {
 }
 
 async function Views({ slug }: { slug: string }) {
-  
+  let views = await getViewsCount();
+  return <ViewCounter allViews={views} slug={slug} />;
 }
 
 export default function Page() {
