@@ -254,7 +254,7 @@ export default function Page() {
           and workshops. You can watch some of my favorites below.
         </p>
       </div>
-{/*       <div className="my-8 flex w-full flex-col space-x-0 space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+      <div className="my-8 flex w-full flex-col space-x-0 space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
         <ChannelLink
           img={avatar}
           name="@leerob"
@@ -265,7 +265,7 @@ export default function Page() {
           name="@vercel"
           link="https://www.youtube.com/@vercelhq"
         />
-      </div> */}
+      </div>
       <div className="prose prose-neutral dark:prose-invert">
         <p>
           Over the past decade, I've written content on my blog and newsletter.
