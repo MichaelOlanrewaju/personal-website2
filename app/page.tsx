@@ -1,4 +1,5 @@
 import { Suspense } from 'react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { unstable_noStore as noStore } from 'next/cache';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -134,6 +135,7 @@ async function Views({ slug }: { slug: string }) {
 export default function Page() {
   return (
     <section>
+      
       <PreloadResources />
       <h1 className="mb-8 text-2xl font-medium tracking-tighter">
         hey, I'm leerob 👋
@@ -355,6 +357,7 @@ export default function Page() {
           </a>
         </li>
       </ul>
+      <SpeedInsights />
     </section>
   );
 }
