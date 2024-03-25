@@ -61,7 +61,9 @@ function ChannelLink({ img, link, name }) {
               priority
             />
             <div className="relative -right-10 -top-6 inline-flex h-6 w-6 items-center rounded-full border border-neutral-200 bg-white p-1 dark:border-neutral-700">
-             
+              <svg width="15" height="11" role="img" aria-label="YouTube logo">
+                <use href="/sprite.svg#youtube" />
+              </svg>
             </div>
           </div>
           <div className="flex flex-col">
@@ -81,21 +83,6 @@ function ChannelLink({ img, link, name }) {
   );
 }
 
-async function Subs({ name }: { name: string }) {
-  noStore();
-  let subscribers;
-  if (name === '@leerob') {
-    subscribers = await getLeeYouTubeSubs();
-  } else {
-    subscribers = await getVercelYouTubeSubs();
-  }
-
-  return (
-    <p className="text-neutral-600 dark:text-neutral-400">
-      {subscribers} subscribers
-    </p>
-  );
-}
 
 function BlogLink({ slug, name }) {
   return (
@@ -121,8 +108,7 @@ function BlogLink({ slug, name }) {
 }
 
 async function Views({ slug }: { slug: string }) {
-  let views = await getViewsCount();
-  return <ViewCounter allViews={views} slug={slug} />;
+  
 }
 
 export default function Page() {
