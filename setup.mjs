@@ -5,7 +5,7 @@ import dotenv from 'dotenv';
 const template = `---
 title: 'Hello, World!'
 publishedAt: '2023-01-01'
-summary: 'This is your first blog post.'
+summary: 'This is your first blog post jkdjdkjdkdkjdkjdk.'
 ---
 
 Hello, World!`;
